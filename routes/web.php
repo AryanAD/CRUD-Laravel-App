@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('/fill-form', [TeacherController::class, 'index'])->name('teacher.index');
 Route::post('/create', [TeacherController::class, 'store'])->name('teacher.store');
 Route::get('/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
